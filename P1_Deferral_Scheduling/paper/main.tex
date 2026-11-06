@@ -1,0 +1,31 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage[margin=18mm]{geometry}
+\usepackage{mathptmx}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{caption}
+
+\definecolor{primary}{RGB}{18,58,112}
+\hypersetup{colorlinks=true,linkcolor=primary,citecolor=primary,urlcolor=primary}
+\setlength{\parskip}{3pt plus 1pt minus 1pt}
+\setlength{\columnsep}{18pt}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+
+\title{\textbf{Learning to Defer and Schedule under Uncertain Service Times and Individual Deadlines}}
+\author{Donggil Kang\\
+AAAI Research Portfolio -- Paper P1 (\texttt{P1\_Deferral\_Scheduling})\\
+\texttt{https://github.com/donggil113/AAAI-2027}}
+\date{October 2026 (Audited Revision v2.0)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Routing uncertain predictions from an automated classifier to human experts can improve decision accuracy on individual instances. However, in time-critical service queues, human review duration varies widely across instances and is unknown prior to completion. Admitting a single complex case with a heavy-tailed service time can delay multiple subsequent tasks past their individual deadlines. We formulate \emph{Joint Deferral and Deadline-Aware Scheduling} under joint predictive uncertainty of human accuracy and service duration. First, in a restricted two-stage Markov decision model, we separate causal distributional dynamic programming ($p_{\text{arr}}=0.85$) from a hindsight clairvoyant oracle, proving that deadline externalities invert point-wise deferral decisions by $+20.25$ percentage points under causal information ($0.7200$ vs.\ $0.5175$) and $+30.00$ percentage points under hindsight arrival knowledge ($0.7500$ vs.\ $0.4500$). Second, we propose \textbf{DEA-JDS}, which enforces a leak-free online observation interface---estimating residual service time of the currently running job strictly from its elapsed time $t - t_{\text{start}}$ and historical completed durations---paired with queue externality rollout pricing and slack-weighted Smith-ratio scheduling. Across five load regimes ($\rho \in \{0.2, 0.5, 0.8, 1.0, 1.2\}$), validation-selected DEA-JDS improves on-time accuracy over Uncertainty+EDF by $+3.97$ percentage points at $\rho=0.8$ ($0.8315$ vs.\ $0.7918$, $p=0.001$) and $+7.22$ to $+8.28$ percentage points at $\rho \in \{1.0, 1.2\}$, while quantile-guarded DEA-JDS cuts all-arrival 99th-percentile latency from $11.63\text{ s}$ to $3.18\text{ s}$.
+\end{abstract}
+\end{document}
